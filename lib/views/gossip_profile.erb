@@ -1,0 +1,16 @@
+<html>
+	<head>
+		<title>The Gossip Project</title>
+	</head>
+	<body>
+		<h1>Gossip n° : <%=params[:id]%></h1>
+			<%my_gossip = Gossip.find(params[:id])%>
+		<p>
+			Auteur : <%=my_gossip.author %>
+			<br>
+			Gossip : <%=my_gossip.content %>
+		</p>
+
+		<a href="/edit/<%=params[:id]%>">Modifier le gossip</a>
+	</body>
+</html>

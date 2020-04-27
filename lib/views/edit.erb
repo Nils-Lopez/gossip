@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>The Gossip Project</title>
+	</head>
+	<body>
+		<h1>Modifier le gossip n°<%=params[:id]%></h1>
+
+		<%my_gossip = Gossip.find(params[:id])%>
+		<p>
+			Gossip de départ: <%=my_gossip.content %>
+		</p>
+		<form action='/gossip/edit/<%=params[:id]%>' method='POST'>
+			Modifier ici : <br>
+			<input type="textarea" name="gossip_new_content">
+			<input type="submit" value="Confirmer">
+		</form>
+	</body>
+</html>
